@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="demo_user_details">
+        <field name="id"
+			type="text"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+			size="10"
+			default="0"
+			readonly="true"
+			class="readonly"
+		/>
+            
+        <field name="name" type="text"
+			class="inputbox"
+			description="COM_DEMO_USER_FIELD_NAME_DESC"
+			label="COM_DEMO_NAME"
+			required="true"
+			size="30"
+		/>
+
+		<field name="username" type="text"
+			class="inputbox"
+			description="COM_DEMO_USER_FIELD_USERNAME_DESC"
+			label="COM_DEMO_USERNAME"
+			required="true"
+			size="30"
+		/>
+
+		<field name="password" type="password"
+			autocomplete="off"
+			class="inputbox validate-password"
+			description="COM_DEMO_USER_FIELD_PASSWORD_DESC"
+			filter="raw"
+			validate="password"
+			label="JGLOBAL_PASSWORD"
+			size="30"
+		/>
+
+		<field name="password2" type="password"
+			autocomplete="off"
+			class="inputbox validate-password"
+			description="COM_DEMO_USER_FIELD_PASSWORD2_DESC"
+			filter="raw"
+			label="COM_DEMO_PASSWORD_REPEAT"
+			size="30"
+			validate="equals"
+			field="password"
+		/>
+
+		<field name="email" type="email"
+			class="inputbox"
+			description="COM_DEMO_USER_FIELD_EMAIL_DESC"
+			label="JGLOBAL_EMAIL"
+			required="true"
+			size="30"
+			validate="email"
+		/>
+
+		<field
+			name="registerDate"
+			type="calendar"
+			class="readonly"
+			label="COM_DEMO_REGISTER_DATE"
+			description="COM_DEMO_REGISTER_DATE_DESC"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc"
+		/>
+    </fieldset>
+</form>
