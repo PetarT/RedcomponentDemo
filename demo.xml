@@ -1,1 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="3.1.0" method="upgrade">
+	<name>COM_DEMO</name>
+    <creationDate>2013-09-19</creationDate>
+    <author>Petar Tuovic</author>
+    <authorEmail>pelesrb@gmail.com</authorEmail>
+    <authorUrl>https://www.redcomponent.com</authorUrl>
+    <license>GNU/GPL</license>
+    <version>0.1</version>
+    <description>Redcomponent demo project.</description>
+    
+    <files folder="administrator/components/com_demo">
+    	<file>demo.php</file>
+		<file>demo.xml</file>
+		<file>config.xml</file>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>sql</folder>
+		<folder>tables</folder>
+		<folder>views</folder>
+    </files>
+    
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+    
+</extension>
