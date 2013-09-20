@@ -12,8 +12,9 @@
 	<administration>
 		<files folder="administrator/components/com_demo">
 			<file>demo.php</file>
+			<file>index.html</file>
 			<file>demo.xml</file>
-			<file>config.xml</file>
+			<file>controller.php</file>
 			<folder>controllers</folder>
 			<folder>helpers</folder>
 			<folder>models</folder>

@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__redcomponent_demo`;
+DROP TABLE IF EXISTS `#__demo`;
