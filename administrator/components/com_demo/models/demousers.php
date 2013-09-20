@@ -1,22 +1,29 @@
 <?php
 /**
- * Demo - Adminstrator
- * @Copyright (C) 2013 - Petar Tuovic - http://www.redcomponent.com
- * @All rights reserved
- * @license under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+ * @package    DemoRedComponent
+ * @copyright  (C) 2013 - Petar Tuovic - http://www.redcomponent.com
+ * @license    GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
  * */
 
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-class DemoModelDemousers extends JModelList {
-	
-	
+/**
+ * Demousers model class for the DemoRedComponent package.
+ *
+ * @package     Redcomponent.Administrator
+ * @subpackage  com_demo
+ * @since       0.1
+ *
+ */
+class DemoModelDemousers extends JModelList
+{
 	/**
 	 * Constructor.
 	 *
 	 * @param   array  $config  An optional associative array of demo users.
 	 * 
+	 * @since   0.1
 	 */
 	public function __construct($config = array())
 	{
@@ -30,10 +37,10 @@ class DemoModelDemousers extends JModelList {
 					'registerDate', 'a.registerDate',
 			);
 		}
-	
+
 		parent::__construct($config);
 	}
-	
+
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -44,19 +51,19 @@ class DemoModelDemousers extends JModelList {
 	 *
 	 * @return  void
 	 *
-	 * @since   1.6
+	 * @since   0.1
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
 		$app = JFactory::getApplication();
 		$context = $this->context;
-	
+
 		$search = $this->getUserStateFromRequest($context . '.search', 'filter_search');
 		$this->setState('filter.search', $search);
-	
+
 		parent::populateState('a.id', 'asc');
 	}
-	
+
 	/**
 	 * Method to get a store id based on model configuration state.
 	 *
@@ -68,29 +75,29 @@ class DemoModelDemousers extends JModelList {
 	 *
 	 * @return  string  A store id.
 	 *
-	 * @since   1.6
+	 * @since   0.1
 	 */
 	protected function getStoreId($id = '')
 	{
 		// Compile the store id.
 		$id .= ':' . $this->getState('filter.search');
-	
+
 		return parent::getStoreId($id);
 	}
-	
-	
+
 	/**
 	 * Creating list query.
 	 *
-	 * @return   string
+	 * @return  string Table list query.
 	 *
+	 * @since   0.1
 	 */
 	protected function getListQuery()
 	{
 		// Create a new query object.
 		$db = $this->getDbo();
 		$query = $db->getQuery(true);
-	
+
 		// Select the required fields from the table.
 		$query->select(
 				$this->getState(
@@ -99,19 +106,20 @@ class DemoModelDemousers extends JModelList {
 				)
 		);
 		$query->from('#__demo AS a');
-		
+
 		// Filter by search in title
 		$search = $this->getState('filter.search');
-		
+
 		if (!empty($search))
 		{
 			$search = $db->quote('%' . $db->escape($search, true) . '%');
 			$query->where('(a.id LIKE ' . $search . ' OR a.name LIKE ' . $search . ' OR a.username LIKE ' . $search . ' OR a.email LIKE ' . $search . ')');
 		}
-		
+
 		// Add the list ordering clause
 		$listOrdering = $this->getState('list.ordering', 'a.id');
 		$listDirn = $db->escape($this->getState('list.direction', 'ASC'));
+
 		if ($listOrdering == 'a.id')
 		{
 			$query->order('a.id ' . $listDirn);
@@ -120,7 +128,7 @@ class DemoModelDemousers extends JModelList {
 		{
 			$query->order($db->escape($listOrdering) . ' ' . $listDirn);
 		}
-	
+
 		return $query;
 	}
 }

@@ -1,9 +1,8 @@
 <?php
 /**
- * Demo - Adminstrator
- * @Copyright (C) 2013 - Petar Tuovic - http://www.redcomponent.com
- * @All rights reserved
- * @license under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+ * @package    DemoRedComponent
+ * @copyright  (C) 2013 - Petar Tuovic - http://www.redcomponent.com
+ * @license    GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
  * */
 
 // No direct access to this file

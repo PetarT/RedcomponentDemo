@@ -1,26 +1,25 @@
 <?php
 /**
- * @package     Redcomponent.Administrator
- * @subpackage  com_demo
- *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
+ * @package    DemoRedComponent
+ * @copyright  (C) 2013 - Petar Tuovic - http://www.redcomponent.com
+ * @license    GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+ * */
 
 defined('_JEXEC') or die;
 
 /**
- * Categories view class for the Category package.
+ * DemoController controller class for the Demo package.
  *
  * @package     Redcomponent.Administrator
  * @subpackage  com_demo
+ * @since       0.1
  * 
  */
 class DemoController extends JControllerLegacy
 {
 	/**
 	 * @var    string  The extension for which the demousers apply.
-	 * @since  1.6
+	 * @since  0.1
 	 */
 	protected $extension;
 
@@ -30,7 +29,7 @@ class DemoController extends JControllerLegacy
 	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @see     JController
-	 * @since   1.6
+	 * @since   0.1
 	 */
 	public function __construct($config = array())
 	{
@@ -45,12 +44,13 @@ class DemoController extends JControllerLegacy
 
 	/**
 	 * Method to display a view.
-	 *
-	 * @param   boolean      $cachable   If true, the view output will be cached
-	 * @param   array        $urlparams  An array of safe url parameters and their variable types, for valid values see {@link JFilterInput::clean()}.
-	 *
+	 *  
+	 * @param   boolean  $cachable   If true, the view output will be cached  
+	 * 
+	 * @param   array    $urlparams  An array of safe url parameters and their variable types, for valid values see {@link JFilterInput::clean()}.
+	 *  
 	 * @return  JController  This object to support chaining.
-	 *
+	 *  
 	 * @since   1.5
 	 */
 	public function display($cachable = false, $urlparams = false)

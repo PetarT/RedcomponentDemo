@@ -1,10 +1,9 @@
 <?php
 /**
- * @package     RedcomponentDemo.Administrator
- *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
+ * @package    DemoRedComponent
+ * @copyright  (C) 2013 - Petar Tuovic - http://www.redcomponent.com
+ * @license    GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+ * */
 
 defined('_JEXEC') or die;
 JToolBarHelper::title(JText::_('COM_DEMO_DEMOUSER_ADD'));
@@ -23,7 +22,8 @@ JHtml::_('formbehavior.chosen', 'select');
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_demo&view=demouser&layout=edit&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="demouser-form"  class="form-validate form-horizontal">
+<form action="<?php echo JRoute::_('index.php?option=com_demo&view=demouser&layout=edit&id=' . (int) $this->item->id); ?>" method="post"
+ name="adminForm" id="demouser-form" class="form-validate form-horizontal">
 	
 	<?php echo JLayoutHelper::render('joomla.edit.item_title', $this); ?>
 	
